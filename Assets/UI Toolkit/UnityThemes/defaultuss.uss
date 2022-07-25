@@ -1,0 +1,19 @@
+.unity-button {
+    -unity-font: url('project://database/Assets/UI%20Toolkit/Fonts/KumbhSans.ttf?fileID=12800000&guid=9189478011c4a0441aaa0a14f75db884&type=3#KumbhSans');
+    font-size: 32px;
+    -unity-text-align: middle-center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(63, 63, 63, 255);
+    -unity-text-outline-color: rgba(0, 0, 0, 255);
+    -unity-text-outline-width: 0;
+    -unity-background-image-tint-color: rgba(255, 255, 255, 255);
+    opacity: 1;
+    display: flex;
+}
+
+.unity-text-field {
+    -unity-font: url('project://database/Assets/UI%20Toolkit/Fonts/KumbhSans.ttf?fileID=12800000&guid=9189478011c4a0441aaa0a14f75db884&type=3#KumbhSans');
+    font-size: 32px;
+    color: rgba(38, 38, 38, 255);
+}
