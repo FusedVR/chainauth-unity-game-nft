@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/NFT Island/Start.unity
+    path: Assets/NFT Island/Scenes/Start.unity
     guid: 143b5f0ec31177945887e8b2d068f795
   - enabled: 1
-    path: Assets/NFT Island/NFT Biome.unity
+    path: Assets/NFT Island/Scenes/NFT Biome.unity
     guid: cebb4d9ec60e75645834082a5d486796
   m_configObjects: {}
