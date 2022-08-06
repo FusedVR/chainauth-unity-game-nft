@@ -1,8 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/UnityThemes/defaultuss.uss?fileID=7433441132597879392&amp;guid=d4e99af9ddf4a5b49883690a122a7508&amp;type=3#defaultuss" />
-    <ui:VisualElement style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgb(213, 255, 234); -unity-font: url(&apos;project://database/Assets/UI%20Toolkit/Fonts/KumbhSans.ttf?fileID=12800000&amp;guid=9189478011c4a0441aaa0a14f75db884&amp;type=3#KumbhSans&apos;);">
-        <ui:Label text="Login with Web 3" display-tooltip-when-elided="true" class="unity-text-field" style="-unity-font: url(&apos;project://database/Assets/UI%20Toolkit/Fonts/KumbhSans.ttf?fileID=12800000&amp;guid=9189478011c4a0441aaa0a14f75db884&amp;type=3#KumbhSans&apos;); -unity-font-style: bold; font-size: 64px; color: rgb(51, 51, 51);" />
-        <ui:TextField picking-mode="Ignore" label="E-Mail Address" text="Enter your email address" name="Email" tooltip="Email for Wallet Login" readonly="false" is-delayed="false" class="unity-text-field" style="flex-grow: 0; width: 800px; align-items: center; height: 85px;" />
-        <ui:Button text="Submit" display-tooltip-when-elided="true" name="Submit" class="unity-button" />
-    </ui:VisualElement>
-</ui:UXML>
