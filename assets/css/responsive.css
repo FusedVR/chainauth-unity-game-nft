@@ -1,0 +1,95 @@
+/* Normal desktop :1200px. */
+@media (min-width: 1200px) and (max-width: 1500px) {
+
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
+    .main_logo a {
+        font-size: 40px;
+    }
+    .header_menu ul li a {
+        font-size: 26px;
+    }
+    .site_text p {
+        font-size: 20px;
+        line-height: 32px;
+        margin-bottom: 25px;
+    }
+    .sing_input input {
+        font-size: 25px;
+    }
+    .sing_input button {
+        font-size: 25px;
+    }
+}
+
+ 
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {  
+    .main_logo a {
+        font-size: 30px;
+    }
+    .header_menu ul li a {
+        font-size: 20px;
+    }
+    .site_text p {
+        font-size: 20px;
+        line-height: 32px;
+        margin-bottom: 25px;
+    }
+    .sing_input input {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    .sing_input button {
+        font-size: 25px;
+    }
+    .hero_tit {
+        font-size: 36px;
+    }
+    .fotter_widget.text-right {
+        text-align: center !important;
+    }
+}
+
+ 
+/* small mobile :320px. */
+@media (max-width: 767px) {
+    .main_logo {
+        text-align: center;
+    }
+    .main_logo a {
+        font-size: 20px;
+    }
+    .header_menu ul li a {
+        font-size: 18px;
+    }
+    .header_menu {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .site_text p {
+        font-size: 20px;
+        line-height: 32px;
+        margin-bottom: 25px;
+    }
+    .sing_input input {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    .sing_input button {
+        font-size: 22px;
+    }
+    .hero_tit {
+        font-size: 26px;
+    }
+    .fotter_widget.text-right {
+        text-align: center !important;
+    }
+}
+ 
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NFT Unity</title>
+
+    <!-- all css in here --> 
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">  
+    <link rel="stylesheet" href="assets/css/style.css">  
+    <link rel="stylesheet" href="assets/css/responsive.css">  
+  
+</head> 
+<body>
+
+    <!-- header_area html start in here  -->
+    <div class="header_area">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="main_logo">
+                        <a href="index.html">
+                            <img src="assets/img/logo/logo.png" alt="main-logo">
+                            NFT Unity Sample
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="header_menu">
+                        <nav>
+                            <ul>
+                                <li><a href="#">FusedVR</a></li>
+                                <li><a href="#">Chain Auth</a></li>
+                                <li><a href="#">SDKs</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header_area html end in here  -->
+
+    <!-- hero_area html start in here  -->
+    <div class="hero_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="hero_tit">Mint an In Game NFT Map</h1>
+                </div>
+                <div class="col-lg-5">
+                    <div class="site_map">
+                        <img src="assets/img/NFTMap.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="site_text">
+                        <p>This sample project is intended to illustrate how you can allow players to mint unique tokens that represent a ticket for a game, virtual land, or in game items. These tokens can then be authenticated with the FusedVR Chain Auth SDK within a standalone app to prove ownership of the minted asset. Map Generation powered by Catlike Coding.</p>
+                        
+                        <p>Mint an NFT with an ID of your choice below to your wallet and then view the randomly generated map in the Unity Open Source Project.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- hero_area html end in here  -->
+
+    <!-- form_area html start in here  -->
+    <div class="form_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="">
+                        <div class="row mp">
+                            <div class="col-lg-7">
+                                <div class="sing_input">
+                                    <input type="text" id="nft-id" placeholder="Enter an NFT ID">
+                                </div>                        
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="sing_input">
+                                    <button id="gen-rand" type="button">Generate Random</button>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="sing_input" >
+                                    <button id="btn-connect" type="button">Mint</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- form_area html end in here  -->
+
+    <!-- footer_area html start in here -->
+    <footer>
+        <div class="footer_area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="fotter_widget text-right">
+                            <ul class="footer_social">
+                                <li><a href="#"><img src="assets/img/icon/twitter.png" alt=""></a></li>
+                                <li><a href="#"><img src="assets/img/icon/linkined.png" alt=""></a></li>
+                                <li><a href="#"><img src="assets/img/icon/youtube.png" alt=""></a></li>
+                            </ul>
+                            <h6>&copy; FusedVR, 2022</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer_area html end in here -->
+
+
+    <!-- main & plugines js -->
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="https://unpkg.com/web3@1.2.11/dist/web3.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/ethers@4.0.16/dist/ethers.min.js"></script>
+
+    <!-- This is our example code -->
+    <script type="text/javascript" src="assets/nfts/randomID.js"></script>
+    <script type="text/javascript" src="assets/nfts/web3modal.js"></script>
+
+</body>
+</html>
