@@ -9,8 +9,9 @@ const Web3Modal = window.Web3Modal.default;
 const WalletConnectProvider = window.WalletConnectProvider.default;
 const evmChains = window.evmChains;
 
-const contractAddress = "0xFa3af5c659ca1e918C7AFde68C72DdeA600F0EC2"
-var contractAbi = ""; 
+//https://polygonscan.com/address/0xF997d71ad47F03056912033e9b43908bC6267647
+const contractAddress = "0xF997d71ad47F03056912033e9b43908bC6267647"
+var contractAbi = "";  //imported below
 
 $.get('assets/nfts/nftabi.json', function (data) {  
   contractAbi = JSON.stringify(data);
@@ -18,11 +19,6 @@ $.get('assets/nfts/nftabi.json', function (data) {
 
 // Web3modal instance
 let web3Modal
-
-
-// Address of the selected account
-let selectedAccount;
-
 
 /**
  * Setup the orchestra
@@ -55,6 +51,7 @@ function init() {
   };
 
   web3Modal = new Web3Modal({
+    network: "polygon", // optional
     cacheProvider: false, // optional
     providerOptions, // required
     disableInjectedProvider: false, // optional. For MetaMask / Brave / Opera.
@@ -75,9 +72,15 @@ async function mintNFT(nftId, instance) {
   let reciept = await nftTxn.wait();
 
   if (reciept) {
-      console.log("Transaction is successful!!!" + '\n' + "Transaction Hash:", reciept.hash + '\n' + "Block Number:" + reciept.blockNumber + '\n' + "Navigate to https://polygonscan.com/tx/" + reciept.hash, "to see your transaction")
+    let modal = $('#alert');
+    modal.find('.modal-title').text('Transaction Success');
+    modal.find('.modal-body').text("Navigate to https://polygonscan.com/tx/" + reciept.transactionHash , "to see your transaction");
+    modal.modal();
   } else {
-      console.log("Error submitting transaction")
+    let modal = $('#alert');
+    modal.find('.modal-title').text('Error');
+    modal.find('.modal-body').text('Error submitting transaction');
+    modal.modal();
   }
 
 }
@@ -86,6 +89,16 @@ async function mintNFT(nftId, instance) {
  * Connect wallet button pressed.
  */
 async function onMint() {
+  let nftId = document.querySelector("#nft-id").value;
+  if (! $.isNumeric(nftId)) {
+    nftId = Math.abs(parseInt(nftId));
+    let modal = $('#alert');
+    modal.find('.modal-title').text('Error');
+    modal.find('.modal-body').text('NFT Id must be a Whole Positive Number');
+    modal.modal();
+    return;
+  }
+
   console.log("Opening a dialog", web3Modal);
   let provider;
   try {
@@ -95,22 +108,15 @@ async function onMint() {
     return;
   }
 
-  // Subscribe to accounts change
-  provider.on("accountsChanged", (accounts) => {
-    //fetchAccountData();
-  });
+  if (provider.chainId != "0x137") {
+    let modal = $('#alert');
+    modal.find('.modal-title').text('Error Chain Id');
+    modal.find('.modal-body').text('Please switch to the Polygon Network');
+    modal.modal();
+    return;
+  }
 
-  // Subscribe to chainId change
-  provider.on("chainChanged", (chainId) => {
-    //fetchAccountData();
-  });
-
-  // Subscribe to networkId change
-  provider.on("networkChanged", (networkId) => {
-    //fetchAccountData();
-  });
-
-  await mintNFT(document.querySelector("#nft-id").value , provider);
+  await mintNFT(nftId , provider);
 }
 
 /**
@@ -131,8 +137,6 @@ async function onDisconnect() {
     await web3Modal.clearCachedProvider();
     provider = null;
   }
-
-  selectedAccount = null;
 
   // Set the UI back to the initial state
   //document.querySelector("#prepare").style.display = "block";
