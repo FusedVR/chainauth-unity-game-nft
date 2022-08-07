@@ -108,7 +108,8 @@ async function onMint() {
     return;
   }
 
-  if (provider.chainId != "0x137") {
+  console.log(provider.chainId);
+  if (provider.chainId != "0x89") {
     let modal = $('#alert');
     modal.find('.modal-title').text('Error Chain Id');
     modal.find('.modal-body').text('Please switch to the Polygon Network');
