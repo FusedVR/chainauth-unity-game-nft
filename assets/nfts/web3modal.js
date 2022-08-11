@@ -115,7 +115,7 @@ async function onMint() {
   if (provider.chainId != "0x13881") { 
     let modal = $('#alert');
     modal.find('.modal-title').text('Error Chain Id');
-    modal.find('.modal-body').text('Please switch to the Polygon Network');
+    modal.find('.modal-body').text('Please switch to the Polygon Mumbai Network');
     modal.modal();
     return;
   }
