@@ -9,8 +9,10 @@ const Web3Modal = window.Web3Modal.default;
 const WalletConnectProvider = window.WalletConnectProvider.default;
 const evmChains = window.evmChains;
 
+//mumbai = "0xfa3af5c659ca1e918c7afde68c72ddea600f0ec2"
+//polygon = "0xF997d71ad47F03056912033e9b43908bC6267647"
 //https://polygonscan.com/address/0xF997d71ad47F03056912033e9b43908bC6267647
-const contractAddress = "0xF997d71ad47F03056912033e9b43908bC6267647"
+const contractAddress = "0xfa3af5c659ca1e918c7afde68c72ddea600f0ec2";
 var contractAbi = "";  //imported below
 
 $.get('assets/nfts/nftabi.json', function (data) {  
@@ -51,7 +53,6 @@ function init() {
   };
 
   web3Modal = new Web3Modal({
-    network: "polygon", // optional
     cacheProvider: false, // optional
     providerOptions, // required
     disableInjectedProvider: false, // optional. For MetaMask / Brave / Opera.
@@ -109,7 +110,9 @@ async function onMint() {
   }
 
   console.log(provider.chainId);
-  if (provider.chainId != "0x89") {
+  //mumbai 0x13881
+  //polygon 0x89
+  if (provider.chainId != "0x13881") { 
     let modal = $('#alert');
     modal.find('.modal-title').text('Error Chain Id');
     modal.find('.modal-body').text('Please switch to the Polygon Network');

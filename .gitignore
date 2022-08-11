@@ -1,0 +1,9 @@
+Library/
+Logs/
+obj/
+.vs/
+
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp.csproj
+FusedVR.Web3.csproj
+chainauth-unity.sln
