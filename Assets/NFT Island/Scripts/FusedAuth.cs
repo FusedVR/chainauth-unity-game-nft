@@ -23,12 +23,15 @@ public class FusedAuth : MonoBehaviour
 
     public ChainAuthManager manager = null; //single instance for game to manage for the player
 
+    [SerializeField]
+    private string appId = ""; //application id for FusedVR
+
     //Async Login Function that Registers and Authenticates a player
     //Returns true / false based on if the player succesfully authenticates
     //If true, then you can use the ChainAuthManager to query other functions like getting the list of NFTs the player owns
     public async Task<bool> Login(string email) {
         if (IsEmail(email)) {
-            manager = await ChainAuthManager.Register(email, "App Id");
+            manager = await ChainAuthManager.Register(email, appId);
             return await manager.AwaitLogin();  //await player login
         } else {
             Debug.LogError("Invalid Email Address");
