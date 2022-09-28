@@ -7,7 +7,7 @@
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "2.0.0"
       },
-      "hash": "20c03125461ab0e9cd784a35914fe4c117d6c538"
+      "hash": "dae258c4f2954cccc60f4130ab30fc050e662aae"
     },
     "com.unity.collab-proxy": {
       "version": "1.17.0",
