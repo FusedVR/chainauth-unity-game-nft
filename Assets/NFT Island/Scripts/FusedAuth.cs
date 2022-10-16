@@ -39,6 +39,10 @@ public class FusedAuth : MonoBehaviour
         }
     }
 
+    public void Logout() {
+        manager.Logout();
+    }
+
     #region Email Handling
     public const string MatchEmailPattern =
     @"^(([\w-]+\.)+[\w-]+|([a-zA-Z]{1}|[\w-]{2,}))@"

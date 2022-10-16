@@ -9,6 +9,7 @@
  *     http://www.apache.org/licenses/LICENSE-2.0
  */
 
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine;
 using FusedVR.Crypto;
@@ -58,5 +59,11 @@ public class NFTGenerator : MonoBehaviour
         generator.seed = (int) long.Parse(nfts[listId]["token_id"]); //note that the ids cannot be longer than 4294967296
         grid.CreateMap(20, 15); //create the map sizing data
         generator.GenerateMap(20, 15); //generate map
+    }
+
+    public void Logout()
+    {
+        FusedAuth.Instance.Logout();
+        SceneManager.LoadScene(0); //load menu after logout
     }
 }
